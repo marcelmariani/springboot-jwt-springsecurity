@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "5af9416c-b492-4516-afc5-fbd1e14eca11",
+		"name": "springboot-springsecurity-jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5756852",
+		"_collection_link": "https://orange-moon-819999.postman.co/workspace/Spring-Boot~2f88cd47-cc09-4c66-a176-730beec15c17/collection/5756852-5af9416c-b492-4516-afc5-fbd1e14eca11?action=share&source=collection_link&creator=5756852"
+	},
+	"item": [
+		{
+			"name": "Generate Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "username",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Private Route",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzcHJpbmdib290LXNlY3VyaXR5LWp3dCIsInN1YiI6InVzZXJuYW1lIiwiZXhwIjoxNzI0ODI3ODk2LCJpYXQiOjE3MjQ3OTE4OTYsInNjb3BlIjoicmVhZCJ9.EG8npWKSCsLNaF-5XOOzBrxO5yV49E3SZMFu0q1lz7TkXUbRR5Ei_S2DcGEprZtV6j5YDnhTJhp3u7ehJTXF5cw_duDNf8vYsSOFxkQ_HwibgaOK1SsLT7I6KIeoB_0o0uFqvseyMrsVvlwgURzfiqkv5San6W4bdeC5XgejWaNaAiJG15fJgwv4g1HF7yb53YdqPsxxHt7LZaHBImsLJ__xcZ21l5_DTbyOWG9faH_SgiSjswRvZXeOF2_d9d8TbCIEJxNUrADxY0XB-_7TfIJesP89S1iFKW-Q6Q39mP9dJqa7U1xLNgwGP2fxXG-esaV3iwWyIxU0ilu0ObWu9Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/private",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"private"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
